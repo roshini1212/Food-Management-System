@@ -72,14 +72,12 @@ After signing up or logging in, the restaurant account is stored in browser loca
 ## Run the ETL Import
 
 ```bash
-cd /Users/roshini/Documents/Playground/FoodManagementSystem2024
 python3 etl/import_inventory.py
 ```
 
 ## Generate an Alert Report
 
 ```bash
-cd /Users/roshini/Documents/Playground/FoodManagementSystem2024
 python3 etl/alert_monitor.py
 ```
 

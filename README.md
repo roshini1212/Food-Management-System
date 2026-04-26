@@ -37,7 +37,6 @@ FoodInventorySystem/
 ## Run the Spring Boot API
 
 ```bash
-cd /Users/roshini/Documents/Playground/FoodManagementSystem2024
 mvn spring-boot:run
 ```
 

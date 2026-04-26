@@ -124,11 +124,4 @@ curl http://localhost:8084/api/alerts
 curl http://localhost:8084/api/dashboard/summary
 ```
 
-## Resume Alignment
 
-This implementation reflects the project description you shared:
-
-- Spring Boot REST services for inventory, suppliers, and alerts
-- Python ETL scripts for ingesting food and supplier data
-- SQL-triggered alert automation to reduce food wastage risk
-- Logging built into the service layer for ongoing monitoring

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Login</title>
+    <link rel="stylesheet" href="/auth.css">
+</head>
+<body>
+<main class="auth-shell">
+    <section class="auth-hero">
+        <p class="auth-kicker">Food Inventory System</p>
+        <h1>Restaurant login</h1>
+        <p>Sign in to your restaurant workspace to manage stock, suppliers, expiry alerts, and the cashier-style ordering dashboard.</p>
+    </section>
+
+    <section class="auth-card">
+        <h2>Welcome back</h2>
+        <form id="loginForm" class="auth-form">
+            <label>
+                Email
+                <input type="email" name="email" placeholder="owner@restaurant.com" required>
+            </label>
+            <label>
+                Password
+                <input type="password" name="password" placeholder="At least 6 characters" required>
+            </label>
+            <button type="submit" class="auth-submit">Log in</button>
+            <p class="auth-feedback" id="authFeedback"></p>
+        </form>
+        <p class="auth-switch">New restaurant? <a href="/signup.html">Create an account</a></p>
+    </section>
+</main>
+<script src="/auth.js"></script>
+</body>
+</html>

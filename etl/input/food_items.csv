@@ -1,0 +1,5 @@
+name,category,supplier_name,quantity,reorder_level,unit,expiry_date,batch_code
+Spinach,Vegetables,Fresh Farms Ltd,25,10,kg,2026-04-30,FF-SP-2401
+Milk,Dairy,Sunrise Dairy,12,15,liters,2026-04-28,SD-MK-9120
+Tomatoes,Vegetables,Green Valley Produce,40,20,kg,2026-05-03,GV-TM-5331
+Yogurt,Dairy,Sunrise Dairy,8,10,boxes,2026-04-27,SD-YG-2288

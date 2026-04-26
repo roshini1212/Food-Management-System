@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Sign Up</title>
+    <link rel="stylesheet" href="/auth.css">
+</head>
+<body>
+<main class="auth-shell">
+    <section class="auth-hero">
+        <p class="auth-kicker">Food Inventory System</p>
+        <h1>Create a restaurant account</h1>
+        <p>Set up an individual restaurant login so each team can access the dashboard with its own business identity.</p>
+    </section>
+
+    <section class="auth-card">
+        <h2>Sign up</h2>
+        <form id="signupForm" class="auth-form">
+            <label>
+                Restaurant Name
+                <input type="text" name="restaurantName" placeholder="Spice Route Kitchen" required>
+            </label>
+            <label>
+                Owner Name
+                <input type="text" name="ownerName" placeholder="Roshini Shah" required>
+            </label>
+            <label>
+                Email
+                <input type="email" name="email" placeholder="owner@spiceroute.com" required>
+            </label>
+            <label>
+                Password
+                <input type="password" name="password" placeholder="At least 6 characters" required minlength="6">
+            </label>
+            <button type="submit" class="auth-submit">Create account</button>
+            <p class="auth-feedback" id="authFeedback"></p>
+        </form>
+        <p class="auth-switch">Already have an account? <a href="/login.html">Log in</a></p>
+    </section>
+</main>
+<script src="/auth.js"></script>
+</body>
+</html>

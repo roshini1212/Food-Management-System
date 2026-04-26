@@ -1,0 +1,14 @@
+com/example/foodmanagement/repository/FoodItemRepository.class
+com/example/foodmanagement/model/Supplier.class
+com/example/foodmanagement/controller/AlertController.class
+com/example/foodmanagement/controller/DashboardController.class
+com/example/foodmanagement/service/FoodManagementService.class
+com/example/foodmanagement/repository/SupplierRepository.class
+com/example/foodmanagement/config/DatabaseInitializer.class
+com/example/foodmanagement/model/DashboardSummary.class
+com/example/foodmanagement/model/AlertLog.class
+com/example/foodmanagement/model/FoodItem.class
+com/example/foodmanagement/controller/FoodItemController.class
+com/example/foodmanagement/FoodManagementApplication.class
+com/example/foodmanagement/repository/AlertRepository.class
+com/example/foodmanagement/controller/SupplierController.class

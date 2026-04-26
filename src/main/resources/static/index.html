@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Inventory System</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="app-shell">
+    <aside class="side-rail">
+        <div class="brand-mark">
+            <div class="brand-flame"></div>
+            <div>
+                <p class="brand-title">Food Inventory System</p>
+                <p class="brand-subtitle">Restaurant Inventory</p>
+            </div>
+        </div>
+
+        <nav class="category-nav" id="categoryNav">
+            <button class="category-pill active" data-category="ALL">All Items</button>
+        </nav>
+
+        <section class="rail-card">
+            <p class="rail-label">Purpose</p>
+            <h2>What this website does</h2>
+            <p id="purposeText">
+                This dashboard helps a restaurant manager decide what to use first, what to reorder, and which supplier to contact before stock or expiry becomes a problem.
+            </p>
+        </section>
+    </aside>
+
+    <main class="main-stage">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Food Inventory System</p>
+                <h1>Restaurant Inventory</h1>
+                <p class="topbar-subtitle">A daily operations screen for kitchen managers to reduce food waste, plan prep, and stay ahead of low-stock items.</p>
+            </div>
+
+            <div class="topbar-actions">
+                <div class="restaurant-chip">
+                    <span class="restaurant-chip-label">Signed in as</span>
+                    <strong id="restaurantName">Restaurant</strong>
+                </div>
+                <label class="searchbox">
+                    <span class="search-icon"></span>
+                    <input type="search" id="searchInput" placeholder="Search foods, suppliers, or batches">
+                </label>
+                <button class="auth-button" id="logoutButton">Log out</button>
+                <button class="icon-button" id="refreshButton" aria-label="Refresh inventory"></button>
+            </div>
+        </header>
+
+        <section class="quick-stats">
+            <article class="stat-card stat-warm">
+                <span class="stat-label">Tracked Items</span>
+                <strong id="totalItems">0</strong>
+                <p>Ingredients and products in inventory</p>
+            </article>
+            <article class="stat-card stat-cool">
+                <span class="stat-label">Critical Today</span>
+                <strong id="criticalItems">0</strong>
+                <p>Items needing immediate kitchen action</p>
+            </article>
+            <article class="stat-card stat-alert">
+                <span class="stat-label">Expiring Soon</span>
+                <strong id="expiringSoon">0</strong>
+                <p>Use soon to reduce waste</p>
+            </article>
+            <article class="stat-card stat-mint">
+                <span class="stat-label">Low Stock</span>
+                <strong id="lowStock">0</strong>
+                <p>Items that need replenishment</p>
+            </article>
+        </section>
+
+        <section class="workspace">
+            <section class="catalog-panel">
+                <div class="catalog-head">
+                    <div>
+                        <p class="catalog-kicker">Inventory To Monitor</p>
+                        <h2 id="catalogTitle">All Food Items</h2>
+                    </div>
+                    <div class="catalog-meta">
+                        <span id="visibleCount">0 items</span>
+                    </div>
+                </div>
+
+                <div class="product-grid" id="productGrid">
+                    <article class="empty-card">Loading products...</article>
+                </div>
+
+                <section class="admin-strip">
+                    <div class="admin-head">
+                        <div>
+                            <p class="catalog-kicker">Operations Intake</p>
+                            <h2>Add Supplier or Food Item</h2>
+                        </div>
+                    </div>
+
+                    <div class="forms-grid">
+                        <form id="supplierForm" class="entry-form">
+                            <h3>New Supplier</h3>
+                            <label>
+                                Supplier Name
+                                <input type="text" name="name" placeholder="Fresh Farms" required>
+                            </label>
+                            <label>
+                                Contact Person
+                                <input type="text" name="contactPerson" placeholder="Anita" required>
+                            </label>
+                            <label>
+                                Email
+                                <input type="email" name="email" placeholder="supplier@email.com" required>
+                            </label>
+                            <label>
+                                Phone
+                                <input type="tel" name="phone" placeholder="9876543210" required>
+                            </label>
+                            <button type="submit" class="action-button action-primary">Create Supplier</button>
+                            <p class="form-feedback" id="supplierFeedback"></p>
+                        </form>
+
+                        <form id="foodForm" class="entry-form">
+                            <h3>New Food Item</h3>
+                            <label>
+                                Item Name
+                                <input type="text" name="name" id="foodNameInput" placeholder="Milk" required>
+                            </label>
+                            <label>
+                                Category
+                                <select name="category" id="categorySelect" required>
+                                    <option value="">Select category</option>
+                                    <option value="Vegetables">Vegetables</option>
+                                    <option value="Fruits">Fruits</option>
+                                    <option value="Dairy">Dairy</option>
+                                    <option value="Grains">Grains</option>
+                                    <option value="Beverages">Beverages</option>
+                                    <option value="Snacks">Snacks</option>
+                                    <option value="Frozen">Frozen</option>
+                                    <option value="Spices">Spices</option>
+                                    <option value="Bakery">Bakery</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </label>
+                            <label>
+                                Supplier
+                                <select name="supplierId" id="supplierSelect" required>
+                                    <option value="">Select supplier</option>
+                                </select>
+                            </label>
+                            <div class="split-fields">
+                                <label>
+                                    Quantity
+                                    <input type="number" name="quantity" min="0" placeholder="10" required>
+                                </label>
+                                <label>
+                                    Reorder Level
+                                    <input type="number" name="reorderLevel" min="0" placeholder="5" required>
+                                </label>
+                            </div>
+                            <div class="split-fields">
+                                <label>
+                                    Unit
+                                    <select name="unit" required>
+                                        <option value="">Select unit</option>
+                                        <option value="kg">kg</option>
+                                        <option value="grams">grams</option>
+                                        <option value="liters">liters</option>
+                                        <option value="ml">ml</option>
+                                        <option value="packs">packs</option>
+                                        <option value="boxes">boxes</option>
+                                        <option value="pieces">pieces</option>
+                                        <option value="bottles">bottles</option>
+                                    </select>
+                                </label>
+                                <label>
+                                    Item Code
+                                    <input type="text" name="batchCode" id="batchCodeInput" placeholder="Auto-generated" required>
+                                </label>
+                            </div>
+                            <label>
+                                Expiry Date
+                                <input type="date" name="expiryDate" required>
+                            </label>
+                            <button type="submit" class="action-button action-primary">Create Food Item</button>
+                            <p class="form-feedback" id="foodFeedback"></p>
+                        </form>
+                    </div>
+                </section>
+            </section>
+
+            <aside class="order-panel">
+                <div class="order-top">
+                    <div>
+                        <p class="catalog-kicker">Daily Operations</p>
+                        <h2>Today’s Action Plan</h2>
+                        <p class="order-date" id="orderDate"></p>
+                    </div>
+                    <div class="alert-badge">
+                        <span id="openAlerts">0</span>
+                        <small>open alerts</small>
+                    </div>
+                </div>
+
+                <div class="order-tabs">
+                    <button class="order-tab active" data-plan-view="prep">Prep Plan</button>
+                    <button class="order-tab" data-plan-view="reorder">Reorder</button>
+                    <button class="order-tab" data-plan-view="suppliers">Suppliers</button>
+                </div>
+
+                <div class="cart-list" id="planList">
+                    <article class="cart-empty">
+                        Click an inventory card to add it to today’s prep plan.
+                    </article>
+                </div>
+
+                <div class="order-summary">
+                    <div class="summary-row">
+                        <span>Prep Items</span>
+                        <strong id="prepItemsValue">0</strong>
+                    </div>
+                    <div class="summary-row">
+                        <span>Critical Ingredients</span>
+                        <strong id="criticalItemsSummary">0</strong>
+                    </div>
+                    <div class="summary-row danger-row">
+                        <span>Need Reorder</span>
+                        <strong id="reorderValue">0</strong>
+                    </div>
+                    <div class="summary-row total-row">
+                        <span>Open Alerts</span>
+                        <strong id="totalValue">0</strong>
+                    </div>
+                </div>
+
+                <div class="insight-box" id="storyCard">
+                    Loading inventory insight...
+                </div>
+
+                <section class="supplier-brief">
+                    <div class="supplier-brief-head">
+                        <p class="catalog-kicker">How To Use It</p>
+                        <h3>Quick Meaning</h3>
+                    </div>
+                    <div id="supplierList" class="supplier-list"></div>
+                </section>
+            </aside>
+        </section>
+    </main>
+</div>
+
+<script src="/app.js"></script>
+</body>
+</html>

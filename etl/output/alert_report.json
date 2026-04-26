@@ -1,0 +1,63 @@
+{
+  "open_alert_count": 4,
+  "alerts": [
+    {
+      "id": 1,
+      "food_item_id": 1,
+      "alert_type": "EXPIRY",
+      "message": "Food item Spinach is expiring on 2026-04-30",
+      "status": "OPEN",
+      "created_at": "2026-04-26 16:53:08"
+    },
+    {
+      "id": 2,
+      "food_item_id": 2,
+      "alert_type": "EXPIRY",
+      "message": "Food item Milk is expiring on 2026-04-28",
+      "status": "OPEN",
+      "created_at": "2026-04-26 16:53:08"
+    },
+    {
+      "id": 3,
+      "food_item_id": 3,
+      "alert_type": "EXPIRY",
+      "message": "Food item Tomatoes is expiring on 2026-05-03",
+      "status": "OPEN",
+      "created_at": "2026-04-26 16:53:08"
+    },
+    {
+      "id": 4,
+      "food_item_id": 4,
+      "alert_type": "EXPIRY",
+      "message": "Food item Yogurt is expiring on 2026-04-27",
+      "status": "OPEN",
+      "created_at": "2026-04-26 16:53:08"
+    }
+  ],
+  "expiring_items": [
+    {
+      "name": "Yogurt",
+      "quantity": 8,
+      "unit": "boxes",
+      "expiry_date": "2026-04-27"
+    },
+    {
+      "name": "Milk",
+      "quantity": 12,
+      "unit": "liters",
+      "expiry_date": "2026-04-28"
+    },
+    {
+      "name": "Spinach",
+      "quantity": 25,
+      "unit": "kg",
+      "expiry_date": "2026-04-30"
+    },
+    {
+      "name": "Tomatoes",
+      "quantity": 40,
+      "unit": "kg",
+      "expiry_date": "2026-05-03"
+    }
+  ]
+}
